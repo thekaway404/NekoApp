@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title><?php echo $title;?> - Página Inicial</title>
+      <meta charset="UTF-8">
+      <meta name="title" content="<?php echo $title;?>">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   	<meta name="msapplication-tap-highlight" content="no"/>
+      <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/screen.css">
+      <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+</head>
+<body class="dashboard" onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..message perso .. '; return true;" style="overflow: hidden;">
+
+<div class="container">
+<div class="scroll" data-id="hori">
+<?php
+   require("tuturial/index.phtml");
+   require("hello/index.phtml");
+   require("me/index.phtml");
+   require("feed/index.phtml");
+   require("groups/index.phtml");
+?>
+</div>
+</div>
+
+<link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/dashboard.css">
+
+<script src="/themes/default/js/dashboard.js?version=1" type="text/javascript"></script>
+<script src="/themes/default/js/navegar.js?version=1" type="text/javascript"></script>
+
+</body>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title><?php echo $title;?></title>
+      <meta charset="UTF-8">
+      <meta name="title" content="<?php echo $title;?>">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   	<meta name="msapplication-tap-highlight" content="no"/>
+       <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/screen.css">
+      <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  </head>
+
+<div class="background"></div>  
+
+<body class="home" onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..message perso .. '; return true;" >
+  <div class="comecando">
+    <center>
+    <div class="cadastrar">
+    <div class="loading"><div class="step1"></div><div class="step2"></div><div class="step3"></div></div>
+    <div class="nani"></div>
+    <div class="error"><div class="after"></div></div>
+    <div id="registro" style="position: absolute; padding: 10px; top: 0px; <?php if(isset($_GET['entrar'])){?> left: -200%; <?php } else{ echo 'left: 0%;'; }  ?>  <?php if(isset($_COOKIE['verificar'])){?> left: -200%; <?php } else{ echo 'left: 0%;'; } ?>transition: 0.6s;">
+    <img src="/themes/default/img/icons/castelinho.svg" style="width: 250px; height: 200px; position: relative; top: -30px">
+    <h1 style="margin-top: 0px; font-size: 32px; position: relative; top: -10px; font-weight: normal;">Cadastra-se, e desfrute de tudo</h1>
+    <form>
+    <div class="input">
+    <i class="fas fa-at"></i>
+    <span id="email">E-mail</span>
+    <input type="" id="email-r" name="" data-span="email" placeholder="E-mail">
+    </div>
+    <div class="input">
+    <i class="fas fa-user"></i>
+    <span id="usuario">Nome</span>
+    <input type="" id="nome-r" name="" data-span="usuario" placeholder="Nome">
+    </div>
+     <div class="input">
+    <i class="fas fa-user"></i>
+    <span id="usuario">Sobrenome</span>
+    <input type="" id="sobrenome-r" name="" data-span="usuario" placeholder="Sobrenome">
+    </div>
+    <div class="input">
+    <i class="fas fa-key"></i>
+    <span id="senha">Senha</span>
+    <input type="password" id="senha-r" name="" data-span="senha" placeholder="Senha">
+    </div>
+    <button id="cadastrarr" class="return_false">Cadastrar</button>
+    </form>
+    <button id="logar" class="return_false" data-href="/entrar">Fazer login</button>
+    </div>
+
+    <div id="login" style="position: absolute; padding: 10px; top: 0px;  left: -200%; transition: 0.6s;">
+    <img src="/themes/default/img/icons/game.svg" style="width: 250px; height: 250px; position: relative; top: -30px">
+    <h1 style="margin-top: 0px; font-size: 32px; position: relative; top: -10px; font-weight: normal;">Efetuando login,desfrute de tudo</h1>
+    <form>
+    <div class="input">
+    <i class="fas fa-at"></i>
+    <span id="email">E-mail</span>
+    <input type="" id="email-l" name="" data-span="email" placeholder="E-mail">
+    </div>
+    <div class="input">
+    <i class="fas fa-key"></i>
+    <span id="senha">Senha</span>
+    <input type="password" id="senha-l" name="" data-span="senha" placeholder="Senha">
+    </div>
+    <button id="logarr" class="return_false">Login</button>
+    </form>
+    <button id="cadastrar" class="return_false" data-href="/">Cadastrar</button>
+    </div>
+
+    <div id="verificar" style="position: absolute; padding: 10px; top: 0px; <?php if(isset($_COOKIE['verificar'])){?> left: 0%; <?php } else{ echo 'left: 200%;'; } ?> transition: 0.6s;">
+    <img src="/themes/default/img/icons/key.svg" style="width: 150px; height: 150px; position: relative; top: -40px; margin-top: 60px;">
+    <h1 style="margin-top: 0px; font-size: 32px; position: relative; top: -10px; font-weight: normal;">Verifique seu e-mail, por gentileza</h1>
+    <form>
+    <div class="input">
+    <i class="fas fa-key" style="top: 75px; position: relative;"></i>
+    <span id="senha">Senha</span>
+    <input type="password" id="token" name="" data-span="senha" placeholder="Código" style="top: 30px; position: relative;">
+    </div>
+    <div class="clearfix"></div>
+    <button id="verificarr" class="return_false">Verificar</button>
+    </form>
+    <a href="/logout"><button class="return_true" data-href="/">Sair</button></a>
+    </div>
+
+    </div>
+    </center>
+  </div>
+
+<script src="/themes/default/js/home.js?version=1" type="text/javascript"></script>
+
+</body>
+
+</html>

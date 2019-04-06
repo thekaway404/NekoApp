@@ -1,0 +1,78 @@
+<div class="over">
+<div class="tuturial">
+	<div class="partes" id="parte0">
+	<h1>Olá <?php echo $user['nome'];?> <strong>seja bem vindo ao NekoApp</strong></h1>
+	<h2>Aqui é você pode publicar, conversar com amigos, e entrar em grupos</h2>
+	<button>Continuar</button>
+	</div>
+	<div class="partes" id="parte1">
+	<h1>Primeiros passos aqui</h1>
+	<h2>1º O scroll funciona dependendo da onde está o seu mouse.</h2>
+	<button id="finish">Finalizar</button>
+	</div>
+</div>
+</div>
+
+<style type="text/css">
+	.over{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.40);
+		top: 0px;
+		left: 0px;
+		z-index: 10;
+	}
+
+	.partes{
+		position: absolute;
+		left: 0px;
+		transition: 1s;
+	}
+
+	.tuturial{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background: rgb(78, 85, 97);
+		width: 200px;
+		padding: 45px;
+		height: 320px;
+		color: var(--white2);
+		white-space: pre-wrap;
+		font-size: 15px;
+		border-radius: 5px;
+		overflow: hidden;
+		text-align: center;
+		z-index: 100;
+	}
+
+	.tuturial button{
+		width: 100%;
+		outline: none;
+		cursor: pointer;
+	}
+
+	#parte1{
+		left: 300%;
+	}
+</style>
+
+<script type="text/javascript">
+	var parte = 0;
+
+	$(".tuturial").click(function(){
+	if(parte == 0){
+		var prox = 1;
+	}
+	var tuto = "#parte" + parte;
+	var tutoprox = "#parte" + prox;
+	$(tuto).css("left", "-500%");
+	$(tutoprox).css("left", "0");
+});
+
+$("#parte1").click(function(){
+	$(".over").hide();
+});
+</script>

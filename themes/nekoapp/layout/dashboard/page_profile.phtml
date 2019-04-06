@@ -1,0 +1,50 @@
+<div class="profile-d">
+	<div class="back">
+	<a href="/perfil/<?php echo $user['id'];?>"><p><?php echo $user['nome'];?></p>
+	<img src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/avatar/default.png"></a>
+	</div>
+</div>
+
+<style type="text/css">
+	.profile-d{
+		width: 100%;
+		height: 150px;
+		margin-bottom: 30px;
+		margin-top: 20px;
+		background: #fff;
+		border-radius: 5px;
+		border: 1px solid #ddd;
+		text-align: center;
+		color: #fff;
+		position: relative;
+	}
+
+	.profile-d img{
+		width: 90px;
+		height: 90px;
+		position: relative;
+		border-radius: 50%;
+		box-shadow: 5px 3px 5px rgba(0,0,0,.90);
+		transform: scale(0.9);
+	}
+
+	.profile-d p{
+		position: relative;
+		top: 5px;
+		text-shadow: 5px 3px 5px rgba(0,0,0,.90);
+		font-size: 20px;
+		color: #fff;
+	}
+
+	.profile-d a:hover{
+		text-decoration: none;
+	}
+
+	.profile-d .back{
+		width: 100%;
+		position: absolute;
+		height: 150px;
+		background-image: url("<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/back.gif");
+		background-size: cover;
+	}
+</style>

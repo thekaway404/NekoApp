@@ -1,0 +1,218 @@
+<div class="headert">
+	<div class="align">
+	<div class="centrar">
+	<div class="left">
+		<a href="/" class="logo">NekoApp</a>
+		<div class="icon-busca">
+			<img style="width: 20px; height: 20px; position: relative; left: 8px; transform: scale(0.9); top: 4px" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/search-1.png">
+		</div>
+		<input class="buscar" type="text" name="" placeholder="Buscar..">
+	<div class="busca_div">
+	</div>
+	</div>
+	<script src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/javascript/search_lo.js" type="text/javascript"></script>
+	<div class="right">
+		<a class="none" style="cursor: pointer;"><img class="icon5" style="width: 25px; height: 25px; right: 0px; position: relative; top: 3px; cursor: pointer; display: none;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/equal-2.png"></a>
+		<a href="#" class="none"><img class="icon4" style="width: 25px; height: 25px; right: 100px; position: relative; top: 3px; cursor: pointer;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/search-1.png"></a>
+		<a href="/"><img class="icon3" style="width: 25px; height: 25px; right: 80px; position: relative; top: 3px; cursor: pointer;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/home-1.png"></a>
+		<img class="icon2" style="position: relative;width: 25px; height: 25px; right: 60px; position: relative; top: 3px; cursor: pointer;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/alarm.png">
+		<img class="icon1" style="position: relative; width: 25px; border-radius: 50%; height: 25px; right: 40px; position: relative; top: 3px; cursor: pointer;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/add-2.png">
+		<a class="user-p ata" data-toggle="dropdown" id="dropPerfil"  aria-haspopup="true" aria-expanded="false"><img style="height: 30px; width: 30px; position: relative;left: -7px; top: -3px; border-radius: 50%;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/avatar/default.png"><span class="name"><?php echo $user['nome'];?></span></a>
+		<div class="dropdown-menu" aria-labelledby="dropPerfil">
+		<span style="position: relative; left: 5px;">Menu</span>
+	    <a class="dropdown-item" href="/perfil/<?php echo $user['id'];?>">Perfil</a>
+	    <a class="dropdown-item" href="#">Configuraçõess</a>
+	    <a class="dropdown-item" href="/logout">Sair</a>
+	  </div>
+	</div>
+	</div>
+	</div>
+
+<div class="busca" style="position: fixed; top: 0; z-index: 100000000000; width: 100%; height: 100%; background: #eee; left: 0; transition: 0.7s; display: none;">
+<div class="icon-busca" style="cursor: pointer;">
+			<img style="width: 20px; height: 20px; position: relative; left: 8px; transform: scale(0.9); top: 4px;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/search-1.png">
+		</div>
+
+<div class="icon-close" style="float: right; right: 0; position: absolute; z-index: 1000;">
+			<img style="width: 20px; height: 20px; position: relative; left: -10px; transform: scale(0.9); top: 10px" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/icons/png/error.png">
+</div>
+
+<input class="buscar" type="text" name="" placeholder="Buscar..">
+<div class="busca_div">
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+$(".busca").css("display","none");
+$(".busca").css("transform", "scale(0)");
+
+$(".icon4").click(function(){
+	$(".busca").show();
+	$(".busca").css("transform", "scale(1)");
+});
+
+$(".icon-close").click(function(){
+	$(".busca").css("transform", "scale(0)");
+	$(".busca").css("display", "none");
+	$("body").css("overflow-y", "auto");
+	$("body").css("overflow-x", "hidden");
+});
+ let nome = $(".busca .buscar").val();
+ $.post("/api/search_recent", {nome: nome},
+        function(data){
+            if(data === '404'){
+                $(".busca .busca_div").html("<p style='color: #000;position: relative; top: 5px; text-align: center;'>Nenhuma busca recente</p>");
+            }
+            else{
+            $(".busca .busca_div").html(data);
+            }
+            return false;
+       }
+          , "html");
+
+	$(".busca .buscar").keyup(function(){
+    let nome = $(".busca .buscar").val();
+    let found = "found user " + nome;
+    $(".busca .busca_div").show();
+    if(nome == ""){
+        $.post("/api/search_recent", {nome: nome},
+        function(data){
+            if(data === '404'){
+                $(".busca .busca_div").html("<p style='color: #000;position: relative; top: 5px; text-align: center;'>Nenhuma busca recente</p>");
+            }
+            else{
+            $(".busca .busca_div").html(data);
+            }
+            return false;
+       }
+          , "html");
+    }
+    else{
+        $.post("/api/search_user", {nome: nome},
+        function(data){
+            if(data === '404'){
+                $(".busca_div").html("<p style='color: #000;position: relative; top: 5px; text-align: center;'>Nenhuma busca encontrada</p>");
+            }
+            else{
+            $(".busca .busca_div").html(data);
+            }
+            return false;
+       }
+          , "html");
+    }
+});
+</script>
+
+
+
+<div class="left-h visible" id="lefth">
+	<div class="info">
+		<div class="avatar">
+			<img style="height: 50px; width: 50px; position: absolute;left: 45px; bottom: 50px; border-radius: 50%;" src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/avatar/default.png"><p class="name"><?php echo $user['nome'];?></p></a>
+		</div>
+		<div class="links">
+			<a href="/perfil/<?php echo $user['id'];?>">Meu perfil</a>
+			<a>Configurações</a>
+			<a class="click_hover">Buscar amigos</a>
+			<a>+ comunidade</a>
+			<a href="/logout">Sair</a>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(".click_hover").click(function(){
+	$(".busca").show();
+	$(".busca").css("transform", "scale(1)");
+	$("body").css("overflow", "hidden");
+});
+</script>
+
+<style type="text/css">
+	.icon-busca{
+		background: rgba(0,0,0,.3);
+		position: absolute;
+		z-index: 1000;
+		top: 5px;
+		-webkit-border-top-left-radius: 20px;
+		-webkit-border-bottom-left-radius: 20px;
+		-moz-border-radius-topleft: 20px;
+		-moz-border-radius-bottomleft: 20px;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+		height: 29px;
+		width: 35px;
+		left: 130px;
+		cursor: pointer;
+	}
+
+	.left-h{
+		position: fixed;
+		left: 0%;
+		width: 150px;
+		height: 100%;
+		background: #3a5c82;
+		z-index: 100000;
+		top: 40px;
+		transition: 0.5s;
+		display: none;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	.left-h .links{
+		position: relative;
+		top: 150px; 
+	}
+
+	.left-h .links a{
+		color: #fff;
+		position: relative;
+		top: 10px;
+		left: 10px;
+		display: block;
+		cursor: pointer;
+	}
+
+	.left-h .links a:hover{
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	.left-h .info{
+		position: relative;
+		width: 100%;
+		height: 150px;
+		background-image: url(<?php echo $site_url;?>/themes/<?php echo $theme;?>/img/back.gif);
+		background-size: cover;
+	}
+
+	.left-h .info p{
+		color: #fff;
+		position: absolute;
+		bottom: 10px;
+		left: 20px;
+	}
+</style>
+
+<script type="text/javascript">
+		$(".icon5").click(function(){
+		if ($('.left-h').is(":visible")){
+		$( ".left-h" ).hide();
+		setTimeout(  function(){
+		$(".left-h").css("left", "-50%");
+		}, 100);
+		setTimeout(  function(){
+			$( ".left-h" ).hide();
+		}, 400);
+		}
+		else{
+		$( ".left-h" ).show();
+		setTimeout(  function(){
+		$(".left-h").css("left", "0%");
+		}, 100);
+		}
+	});
+</script>

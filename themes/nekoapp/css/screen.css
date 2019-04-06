@@ -1,0 +1,261 @@
+/*Header*/
+
+@media only screen and (max-width: 455px) {
+    .pc{
+    	display: none;
+    }
+
+    .mobile{
+    	display: block !important;
+    }
+
+    .headert .left{
+        display: none;
+    }
+
+    .headert .right{
+        position: relative;
+        margin: 0px auto;
+    }
+
+    .headert .right a{
+        left: 0px;
+    }
+
+    .headert .right .icon1{
+        right: 5px !important;
+    }
+
+    .headert .right .icon2{
+        right: 10px !important;
+    }
+
+     .headert .right .icon3{
+        right: 15px !important;
+    }
+
+     .headert .right .icon4{
+        right: 20px !important;
+    }
+
+    .scrolled{
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+@media only screen and (min-width: 680px){
+    .left-h{
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width: 1297px){
+    .align{
+        max-width: 850px !important;
+    }
+}
+
+@media only screen and (max-width: 1175px){
+    .align{
+        max-width: 750px !important;
+    }
+}
+
+@media only screen and (max-width: 1081px){
+    .align{
+        max-width: 650px !important;
+    }
+
+    .headert .right .icon3{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 983px){
+    .align{
+        max-width: 550px !important;
+    }
+
+    .headert .right .icon3{
+        display: none;
+    }
+
+    .headert .left{
+        width: 30% !important;
+    }
+}
+
+@media only screen and (max-width: 875px){
+    .align{
+        max-width: 100% !important;
+    }
+
+    .headert .right .icon3{
+        display: none;
+    }
+
+    .headert .left{
+        width: 30% !important;
+    }
+    
+    .statusp{
+        width: 100%;
+    }
+
+    .scrolled{
+        overflow-x: hidden !important;
+        overflow-y: hidden;
+    }
+}
+
+
+
+@media only screen and (max-width: 555px) {
+    .headert .left .buscar{
+        display: none;
+    }
+
+    .headert .left .icon-busca{
+        display: none;
+    }
+
+     .headert .right .icon4{
+        display: inline-block !important;
+    }
+
+    .scrolled{
+        overflow-x: auto !important;
+        overflow-y: hidden;
+    }
+
+}
+
+@media only screen and (max-width: 685px) {
+    .headert .left .buscar{
+        display: none;
+    }
+
+    .headert .left .icon-busca{
+        display: none;
+    }
+
+     .headert .right .icon4{
+        display: inline-block !important;
+    }
+
+    .scrolled{
+        overflow-x: auto !important;
+        overflow-y: hidden;
+    }
+}
+
+@media only screen and (max-width: 495px) {
+    .headert .left .logo{
+        display: none;
+    }
+
+    .headert .right{
+      position: relative;
+      margin: 0px auto;
+      width: 100%;
+    }
+
+    .headert .right .icon4{
+        right: -20px !important;
+    }
+
+    .headert .right .icon3{
+        right: -40px !important;
+    }
+
+    .headert .right .icon2{
+        right: -60px !important;
+    }
+
+    .headert .right .icon1{
+        right: -80px !important;
+    }
+
+    .headert .right .user-p{
+        right: 0;
+        top: -5px !important;
+        float: right;
+        height: 45px;
+    }
+
+    .headert .right .user-p .ata{
+        top: -5px !important;
+    }
+    .scrolled{
+        overflow-x: auto !important;
+        overflow-y: hidden;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    .headert .right .icon1{
+        display: none;
+    }
+
+    .headert .right .icon4{
+        right: -30px !important;
+    }
+
+    .headert .right .icon3{
+        right: -50px !important;
+    }
+
+    .headert .right .icon2{
+        right: -70px !important;
+    }
+
+    .headert .right .icon1{
+        right: -90px !important;
+    }
+
+    .scrolled{
+        overflow-x: auto !important;
+        overflow-y: hidden;
+    }
+} 
+
+@media only screen and (max-width: 327px) {
+
+    .headert .right .icon4{
+        display: none !important;
+    }
+
+    .headert .right .icon3{
+        display: none !important;
+    }
+
+    .headert .right .icon2{
+        display: none !important;
+    }
+
+    .headert .right .icon1{
+        display: none !important;
+    }
+
+    .headert .right .icon5{
+        display: inline-block !important;
+        left: 10px;
+        transform: scale(1.1);
+    }
+
+    .scrolled{
+        overflow-x: auto !important;
+        overflow-y: hidden;
+    }
+} 
+
+/*End Header*/
+
+/*Home*/
+@media only screen and (max-height: 626px) {
+    .home .inpiration{
+        top: 90px;
+    }
+
+}

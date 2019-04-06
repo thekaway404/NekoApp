@@ -1,0 +1,687 @@
+
+		<svg viewBox="0 0 50 210">
+		  	<path data-id="<?php echo $resultado_posts['id'];?>" id="like-red<?php echo $resultado_posts['id'];?>" class="like-red" d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/>
+
+	  		<path class="like" id="like<?php echo $resultado_posts['id'];?>" fill="#AAB8C2" data-id="<?php echo $resultado_posts['id'];?>"  d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/>
+	  		<animate 
+				xlink:href="#like"
+				attributeName="opacity"
+				to="1"
+				dur=".2s"
+				fill="freeze"
+				begin="click"
+				id="animation-circle"/>
+			
+
+			<circle data-id="<?php echo $resultado_posts['id'];?>" id="circle" r="10" cx="27" cy="31" fill="none" stroke="transparent" stroke-width="10"/>
+			<animate 
+				xlink:href="#circle"
+				attributeName="stroke"
+				to="#C68FF4"
+				dur=".2s"
+				fill="freeze"
+				begin="animation-circle.begin + 0s"/>
+			<animate 
+				xlink:href="#circle"
+				attributeName="r"
+				to="30"
+				dur=".2s"
+				fill="freeze"
+				begin="animation-circle.begin + 0s"
+				id="openCircle"/>
+			<animate 
+				xlink:href="#circle"
+				attributeName="stroke-width"
+				to="0"
+				dur=".3s"
+				fill="freeze"
+				begin="openCircle.begin + .1s"/>
+
+			<g>
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="purple-rigth-1" opacity="0" r="2" cx="30" cy="40" fill="#cc8ef5"/>
+				<g>	
+					<animate 
+						xlink:href="#purple-rigth-1"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#purple-rigth-1"
+						attributeName="cx"
+						to="71"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-1"
+						attributeName="cy"
+						to="7"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-1"
+						attributeName="fill"
+						to="#f4bb32"
+						dur=".5s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-1"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="purple-rigth-2" opacity="0" r="3" cx="30" cy="40" fill="#cc8ef5"/>
+				<g>
+					<animate 
+						xlink:href="#purple-rigth-2"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#purple-rigth-2"
+						attributeName="cx"
+						to="91"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-2"
+						attributeName="cy"
+						to="15"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-2"
+						attributeName="fill"
+						to="#f4bb32"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .3s"/>
+					<animate 
+						xlink:href="#purple-rigth-2"
+						attributeName="opacity"
+						to="0"
+						dur=".6s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+			</g>
+			
+
+			<!-- Segundo Grupo de círculos -->
+			<g>
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="purple-rigth-3" opacity="0" r="2" cx="57" cy="27" fill="#cc8ef5"/>
+				<g>	
+					<animate 
+						xlink:href="#purple-rigth-3"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#purple-rigth-3"
+						attributeName="cx"
+						to="72"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-3"
+						attributeName="cy"
+						to="47"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-3"
+						attributeName="fill"
+						to="#8ce8c3"
+						dur=".5s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-3"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="purple-rigth-4" opacity="0" r="3" cx="56" cy="40" fill="#cc8ef5"/>
+				<g>
+					<animate 
+						xlink:href="#purple-rigth-4"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#purple-rigth-4"
+						attributeName="cx"
+						to="87"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-4"
+						attributeName="cy"
+						to="59"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#purple-rigth-4"
+						attributeName="fill"
+						to="#8ce8c3"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .3s"/>
+					<animate 
+						xlink:href="#purple-rigth-4"
+						attributeName="opacity"
+						to="0"
+						dur=".6s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+			</g>
+
+			<!-- Terceiro Grupo de círculos -->
+			<g>
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="circle-down-1" opacity="0" r="2" cx="30" cy="40" fill="#f48ea7"/>
+				<g>	
+					<animate 
+						xlink:href="#circle-down-1"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-down-1"
+						attributeName="cx"
+						to="50"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-1"
+						attributeName="cy"
+						to="70"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-1"
+						attributeName="fill"
+						to="#349fef"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-1"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="circle-down-2" opacity="0" r="3" cx="30" cy="40" fill="#f48ea7"/>
+				<g>
+					<animate 
+						xlink:href="#circle-down-2"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-down-2"
+						attributeName="cx"
+						to="66"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-2"
+						attributeName="cy"
+						to="93"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-2"
+						attributeName="fill"
+						to="#8ce8c3"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .3s"/>
+					<animate 
+						xlink:href="#circle-down-2"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+			</g>
+
+			<!-- Quarto Grupo de círculos -->
+			<g>
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="circle-down-3" opacity="0" r="2" cx="30" cy="40" fill="#96d8e9"/>
+				<g>	
+					<animate 
+						xlink:href="#circle-down-3"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-down-3"
+						attributeName="cx"
+						to="10"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-3"
+						attributeName="cy"
+						to="75"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-3"
+						attributeName="fill"
+						to="#9e31e2"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-3"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="circle-down-4" opacity="0" r="3" cx="30" cy="40" fill="#96d8e9"/>
+				<g>
+					<animate 
+						xlink:href="#circle-down-4"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-down-4"
+						attributeName="cx"
+						to="0"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-4"
+						attributeName="cy"
+						to="93"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-down-4"
+						attributeName="fill"
+						to="#9e31e2"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .3s"/>
+					<animate 
+						xlink:href="#circle-down-4"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+			</g>
+
+			<!-- Quinto Grupo de círculos -->
+			<g>
+				<circle data-id="<?php echo $resultado_posts['id'];?>"id="circle-left-1" opacity="0" r="2" cx="30" cy="40" fill="#8a97f3"/>
+				<g>	
+					<animate 
+						xlink:href="#circle-left-1"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-left-1"
+						attributeName="cx"
+						to="-10"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-1"
+						attributeName="cy"
+						to="45"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-1"
+						attributeName="fill"
+						to="#349fef"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-1"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+
+				<circle data-id="<?php echo $resultado_posts['id'];?>"id="circle-left-2" opacity="0" r="3" cx="30" cy="40" fill="#96d8e9"/>
+				<g>
+					<animate 
+						xlink:href="#circle-left-2"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-left-2"
+						attributeName="cx"
+						to="-35"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-2"
+						attributeName="cy"
+						to="65"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-2"
+						attributeName="fill"
+						to="#9e31e2"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .3s"/>
+					<animate 
+						xlink:href="#circle-left-2"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+			</g>
+
+			<!-- Sexto Grupo de círculos -->
+			<g>
+				<circle data-id="<?php echo $resultado_posts['id'];?>"id="circle-left-3" opacity="0" r="2" cx="30" cy="40" fill="#8ce8c3"/>
+				<g>	
+					<animate 
+						xlink:href="#circle-left-3"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-left-3"
+						attributeName="cx"
+						to="-18"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-3"
+						attributeName="cy"
+						to="15"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-3"
+						attributeName="fill"
+						to="#da7bcb"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-3"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+
+				<circle data-id="<?php echo $resultado_posts['id'];?>" id="circle-left-4" opacity="0" r="3" cx="30" cy="40" fill="#8ce8c3"/>
+				<g>
+					<animate 
+						xlink:href="#circle-left-4"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-left-4"
+						attributeName="cx"
+						to="-40"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-4"
+						attributeName="cy"
+						to="10"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-left-4"
+						attributeName="fill"
+						to="#da7bcb"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .3s"/>
+					<animate 
+						xlink:href="#circle-left-4"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+			</g>
+
+			<!-- Sétimo Grupo de círculos -->
+			<g>
+				<circle data-id="<?php echo $resultado_posts['id'];?>"id="circle-top-1" opacity="0" r="2" cx="30" cy="40" fill="#91d2fa"/>
+				<g>	
+					<animate 
+						xlink:href="#circle-top-1"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-top-1"
+						attributeName="cx"
+						to="32"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-top-1"
+						attributeName="cy"
+						to="-9"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-top-1"
+						attributeName="fill"
+						to="#d69cf4"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-top-1"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+
+				<circle id="circle-top-2" opacity="0" r="3" cx="30" cy="40" fill="#8ce8c3"/>
+				<g>
+					<animate 
+						xlink:href="#circle-top-2"
+						attributeName="opacity"
+						to="1"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .1s"/>
+					<animate 
+						xlink:href="#circle-top-2"
+						attributeName="cx"
+						to="23"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-top-2"
+						attributeName="cy"
+						to="-26"
+						dur=".2s"
+						fill="freeze"
+						begin="openCircle.begin + .2s"/>
+					<animate 
+						xlink:href="#circle-top-2"
+						attributeName="fill"
+						to="#da7bcb"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .3s"/>
+					<animate 
+						xlink:href="#circle-top-2"
+						attributeName="opacity"
+						to="0"
+						dur=".3s"
+						fill="freeze"
+						begin="openCircle.begin + .4s"/>
+				</g>
+			</g>
+
+		</svg>
+		<svg style="display:none">
+		    <defs>
+		        <filter id="drunk">
+		            <feTurbulence baseFrequency="0.01" numOctaves="2" seed="1"/>
+		            <feDisplacementMap in="SourceGraphic" scale="30" />
+		        </filter>
+		    </defs>
+		</svg>
+
+	<script type="text/javascript">
+
+$(".like").click(function(){
+	var postid = $(this).data("id");
+	var liked = "#like-red" + postid;
+	$(this).hide();
+	$(liked).show();
+	$(liked).css('animation', "click .6s");	
+});
+
+$(".like-red").hide();
+
+// var like = $('#like');
+// var likeRed = $('#like-red');
+
+// $(like).click(function(){
+// 	$(like).css = ('display', 'none'); 
+// 	$(like).toggle();
+// 	$(likeRed).toggle();
+// 	$(likeRed).css('animation', "click .6s");	
+// });
+
+// $(likeRed).click(function(){
+// 	console.log('ds');
+// 	$(likeRed).toggle();
+// 	$(like).toggle();
+	
+// });
+	</script>
+
+	<style type="text/css">
+svg{
+padding: 0px;
+  cursor:pointer;
+  transform: translateX(-50px);
+  width: 40px;
+  position: relative;
+  left: 60px;
+  top: -10px;
+  z-index: 200;
+}
+@keyframes click{
+	0% {
+		transform: scale(.1);
+	}
+	80% {
+		transform: scale(1.1);
+	}
+	90% {
+		transform: scale(.9);
+	}
+	100% {
+		transform: scale(.9);
+	}
+}
+@keyframes sobrepor{
+	0% {
+		fill:#E81C4F;
+		transform: scale(1);
+	}
+	100% {
+		fill: #AAB8C2;
+		transform: scale(1);
+	}
+}
+.like-red{
+	transform-origin: center;
+	transition: all .5s ease;
+	fill:#E81C4F;
+}
+	</style>

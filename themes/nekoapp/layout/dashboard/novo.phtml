@@ -1,0 +1,77 @@
+<div class="fazer">
+	<p>Publique algo <?php echo $user['nome'];?>.</p>
+	<textarea class="textaread" placeholder="No que estás a pensar?"></textarea>
+	<button data-name="<?php echo $user['nome'];?>" data-id="404" class="postnew">Publicar</button>
+	<div class="error" style="background: red; position: relative; color: #fff; top: 15px;">
+		<p>Não é possivel deixar o campo em branco</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(".error").hide();
+
+	$(".postnew").click(function(){
+	var idbutton = $(this).data("id");
+	var msg = $(".textaread").val();
+	var name = $(this).data("name");
+	$.post("/api/postnew", {cool: idbutton, msg: msg},
+        function(status){
+        if(status == "sucess"){
+          	$(".textaread").val("");
+          	$(".after").before(status)
+          	$(".s404notfoundpost").hide();
+	     	$.post("/api/listpostte", {cool: idbutton, msg: msg, name: name},
+	        function(newpost){
+	        	$(".aftercool").before(newpost);
+	        	$(".error").hide();
+	        }
+        , "html");
+	     }
+	     else if(status == "01"){
+	     	$(".textaread").val("");
+	     	$(".error").show();
+	     }
+	     else if (status == "not"){
+	     	$(".textaread").val("");
+	     	$(".s404notfoundpost").hide();
+	     	$(".error").hide();
+	     	$.post("/api/listpostte", {cool: idbutton, msg: msg, name: name},
+	        function(newpost){
+	        	$(".aftercool").after(newpost);
+	        }
+        , "html");
+	     }
+         }
+          , "html");
+	return false;
+	});
+</script>
+
+<style type="text/css">
+	.fazer{
+		position: relative;
+		width: 100%;
+		padding: 5px;
+		border-radius: 3px;
+		background: rgba(0,0,0,.10);
+	}
+
+	.fazer textarea{
+		resize: none;
+		width: 100%;
+		border: none;
+		outline: none;
+		background: transparent;
+	}
+
+	.fazer button{
+		border: none;
+		padding: 3px;
+		color: #fff;
+		background: #4a76a8;
+		width: 100px;
+		position: relative;
+		top: 0px;
+		cursor: pointer;
+	}
+</style>

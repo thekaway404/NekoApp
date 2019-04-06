@@ -1,0 +1,24 @@
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+ErrorDocument 404 /view/404/index.php
+ErrorDocument 403 /view/404/index.php
+
+RewriteRule ^register /php/account/register.php	 [NC,QSA]
+RewriteRule ^validar /php/account/verificar.php	 [NC,QSA]
+RewriteRule ^verificandotoken /php/account/token.php	 [NC,QSA]
+RewriteRule ^login /php/account/login.php	 [NC,QSA]
+RewriteRule ^logout /php/account/logout.php	 [NC,QSA]
+RewriteRule ^bzz /php/user/verify.php	 [NC,QSA]
+RewriteRule ^perfil/(.*)$ /index.php?id=$1&profile=1 [L]
+RewriteRule ^api/list_feed /php/feed/list_feed.php	 [NC,QSA]
+RewriteRule ^api/listarfeed /php/feed/list_feed_profile.php	 [NC,QSA]
+RewriteRule ^api/postnew /php/feed/post.php	 [NC,QSA]
+RewriteRule ^api/listpostte /php/feed/listpostte.php	 [NC,QSA]
+RewriteRule ^api/search_user /php/search/s_search.php	 [NC,QSA]
+RewriteRule ^api/search_recent /php/search/r_search.php	 [NC,QSA]
+RewriteRule ^entrar index.php?entrar=1	 [NC,QSA]
+RewriteRule ^dashboard index.php?dashboard=1	 [NC,QSA]
+</IfModule>

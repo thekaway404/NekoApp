@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title><?php echo $title;?> - <?php echo $user['nome'];?></title>
+      <meta charset="UTF-8">
+      <meta name="title" content="<?php echo $title;?>">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   	<meta name="msapplication-tap-highlight" content="no"/>
+      <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/screen.css">
+      <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/style.css">
+      <script src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/javascript/jquery.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/bootstrap.min.css" crossorigin="anonymous">
+      <script src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/javascript/popper.min.js" crossorigin="anonymous"></script>
+      <script src="<?php echo $site_url;?>/themes/<?php echo $theme;?>/javascript/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="dashboard">
+<div class="container-fluid">
+<?php
+include("themes/$theme/layout/dashboard/header.phtml");
+?>
+<div class="align">
+<div class="main">
+   <div class="page-margin">
+   <div class="row">
+      <div class="col-md middlecol">
+         <?php
+         include("themes/$theme/layout/profile/me/status.phtml");
+         ?> 
+      </div>
+</div>
+      <div class="col-md middlecol">
+         <?php
+         include("themes/$theme/layout/profile/me/welcome.phtml");
+         include("themes/$theme/layout/profile/friends_sug.phtml");
+         include("themes/$theme/layout/profile/feed.phtml");
+         ?>
+      </div>
+</div>
+
+</div>
+</body>

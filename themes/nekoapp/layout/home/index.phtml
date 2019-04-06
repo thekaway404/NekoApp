@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title><?php echo $title;?></title>
+      <meta charset="UTF-8">
+      <meta name="title" content="<?php echo $title;?>">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   	<meta name="msapplication-tap-highlight" content="no"/>
+       <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/screen.css">
+      <link rel="stylesheet" href="<?php echo $site_url;?>/themes/<?php echo $theme;?>/css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+
+<body class="home">
+<div class="container-fluid">
+<div class="header">
+      <h1><?php echo $title;?></h1>
+      <div class="f_right">
+         <div class="pc">
+         <a class="registro account_ab" id="registro1" data-toggle="modal" data-target="#Modalregistro">Cadastra-se</a>
+         <a data-toggle="modal" class="account_ab" data-target="#Modallogin" style="color: #fff;"> Login</a>
+          <?php
+         if(isset($_COOKIE['verificar'])){?>
+            <a class="registro account_ab" href="/logout" id="logout2">Sair</a>
+          <?php } ?>
+         </div>
+         <div class="mobile">
+            <a class="registro account_ab" id="MeuAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
+            <div class="dropdown-menu" aria-labelledby="MeuAccount">
+             <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal" data-target="#Modallogin">Login</a>
+             <a class="dropdown-item" id="registro2" style="cursor: pointer;" data-toggle="modal" data-target="#Modalregistro">Registro</a>
+             <?php
+            if(isset($_COOKIE['verificar'])){?>
+             <a class="dropdown-item" href="/logout" id="logout" style="cursor: pointer;">Sair</a>
+            <?php } ?>
+           </div>
+         </div>
+      </div>
+
+<!-- Modal Registro -->
+<div class="modal fade" id="Modalregistro" tabindex="-1" role="dialog" aria-labelledby="Modalregistro" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalregistroLabel">Registrando</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <?php
+      if(isset($_COOKIE['verificar'])){?>
+      <script type="text/javascript">
+            $("#registro1").hide();
+            $("#registro2").hide();
+            $("#logout").show();
+            $("#logout2").show();
+            $("#cadastrase").hide();
+            $("#logase").show();
+      </script>
+      <div class="modal-body" id="form_verificar" style="display: block;">
+        <form>
+          <div class="form-group">
+            <p>Verifique no seu e-mail</p>
+            <label for="message-text" class="col-form-label">Token:</label>
+            <input type="password" class="form-control" id="token">
+          </div>
+        </form>
+      <div class="alert alert-danger" id="alertar-danger2" role="alert">
+       Ocorreu algum erro
+      </div>
+      <div class="alert alert-success" id="alertar-sucess2" role="alert">
+        Conta confirmada com sucesso! Estamos te rediricionando!
+      </div>
+      </div>
+       <?php } else{ ?>
+      <div class="modal-body" id="form_cadastro">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">E-mail</label>
+            <input type="text" class="form-control" id="email-r">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Senha:</label>
+            <input type="password" class="form-control" id="senha-r">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome-r">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Sobrenome:</label>
+            <input type="text" class="form-control" id="sobrenome-r">
+          </div>
+        </form>
+      <div class="alert alert-danger" id="alertar-danger2" role="alert">
+       Ocorreu algum erro
+      </div>
+      <div class="alert alert-danger" id="alertar-danger" role="alert">
+       Ocorreu algum erro
+      </div>
+      <div class="alert alert-success" id="alertar-sucess2" role="alert">
+       Conta confirmada com sucesso! Estamos te rediricionando!
+      </div>
+      </div>
+      <div class="modal-body" id="form_verificar">
+        <form>
+          <div class="form-group">
+            <p>Verifique no seu e-mail</p>
+            <label for="message-text" class="col-form-label">Token:</label>
+            <input type="password" class="form-control" id="token">
+          </div>
+        </form>
+      <div class="alert alert-danger" id="alertar-danger2" role="alert">
+       Ocorreu algum erro
+      </div>
+      <div class="alert alert-danger" id="alertar-danger" role="alert">
+       Ocorreu algum erro
+      </div>
+      </div>
+      <?php } ?>
+      <div class="alert alert-success" id="alertar-sucess" role="alert">
+        Sucesso ao cadastrar, confirme sua conta
+      </div>
+      <?php
+      if(isset($_COOKIE['verificar'])){?>
+      <div class="modal-footer">
+        <a href="/logout"><button type="button" href="/logout" class="btn btn-secondary" data-dismiss="modal">Deslogar</button></a>
+        <button type="button" id="verificar" class="btn btn-primary">Verificar</button>
+      </div>
+      <?Php } else{ ?>
+      <div class="modal-footer" id="registrot">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" id="registro" class="btn btn-primary">Registrar</button>
+      </div>
+      <div class="modal-footer" id="verificart">
+        <a href="/logout"><button type="button" href="/logout" class="btn btn-secondary" data-dismiss="modal">Deslogar</button></a>
+        <button type="button" id="verificar" class="btn btn-primary">Verificar</button>
+      </div>
+      <?php } ?>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+        /// Quando usuário clicar em salvar será feito todos os passo abaixo
+        $('#registro').click(function() {
+ 
+         var emailr = $("#email-r").val();
+         var senhar = $("#senha-r").val();
+         var nomer = $("#nome-r").val();
+         var sobrenomer = $("#sobrenome-r").val();
+
+         $("#registro").html("<div class='loader'></div>");
+
+          $.post("/register", {email: emailr, senha: senhar, nome: nomer, sobrenome: sobrenomer},
+         function(data){
+            if(data == '01'){
+               setTimeout(  function(){
+               $("#registro").html("Registrar");
+               $("#alertar-danger").html("Preencha os campos");
+               $("#alertar-danger").show();
+               $("#alertar-sucess").hide();
+               }, 1500);
+            }
+            else if(data == 'verificar'){
+               setTimeout(  function(){
+               $("#registro").html("Verificar");
+               $("#alertar-danger").hide();
+               $("#form_cadastro").hide();
+               $("#form_verificar").show();
+               $("#verificart").show();
+               $("#registrot").hide();
+               }, 1500);
+            }
+            else if(data == '02'){
+               setTimeout(  function(){
+               $("#registro").html("Registrar");
+               $("#alertar-danger").html("Este e-mail já existe");
+               $("#alertar-danger").show();
+               $("#alertar-sucess").hide();
+               }, 1500);
+            }
+            else{
+               setTimeout(  function(){
+               $("#registro").html("Registrar");
+               $("#alertar-danger").html("Ocorreu um erro");
+               $("#alertar-danger").show();
+               $("#alertar-sucess").hide();
+               }, 1500);
+            }
+         }
+          , "html");
+         return false;
+
+     });
+
+
+        /// Quando usuário clicar em salvar será feito todos os passo abaixo
+        $('#verificar').click(function() {
+ 
+         var tokenD = $("#token").val();
+
+         $("#verificar").html("<div class='loader'></div>");
+
+          $.post("/verificandotoken", {token: tokenD},
+         function(dataa){
+            if(dataa == 'sucess'){
+               setTimeout(  function(){
+               $("#verificar").html("Verificar");
+               $("#alertar-danger2").hide();
+               $("#alertar-sucess2").show();
+               $('#registro').attr('id', 'verificar');
+               }, 1500);
+               setTimeout( function(){
+                  location.reload();
+                }, 2000);
+            }
+            else if(dataa == 'invalid'){
+               setTimeout(  function(){
+               $("#verificar").html("Verificar");
+               $("#alertar-danger2").show();
+               $("#alertar-danger2").html("Código invalido");
+               $("#alertar-sucess2").hide();
+               }, 1500);
+            }
+            else{
+               setTimeout(  function(){
+               $("#verificar").html("Verificar");
+               $("#alertar-danger2").html("Ocorreu um erro");
+               $("#alertar-danger2").show();
+               $("#alertar-sucess2").hide();
+               }, 1500);
+            }
+         }
+          , "html");
+         return false;
+
+     });
+ 
+</script>
+
+<!-- End modal Registro -->
+
+<!-- Modal Login -->
+<div class="modal fade" id="Modallogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+       <?php
+      if(isset($_COOKIE['verificar'])){?>
+      <div class="modal-body" id="form_verificar2" style="display: block;">
+        <form>
+          <div class="form-group">
+            <p>Verifique no seu e-mail</p>
+            <label for="message-text" class="col-form-label">Token:</label>
+            <input type="password" class="form-control" id="token2">
+          </div>
+        </form>
+      <div class="alert alert-danger" id="alertar-danger23" role="alert">
+       Ocorreu algum erro
+      </div>
+      <div class="alert alert-success" id="alertar-sucess23" role="alert">
+        Conta confirmada com sucesso! Estamos te rediricionando!
+      </div>
+      </div>
+       <?php } else{ ?>
+      <div class="modal-body" id="form_login2">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">E-mail</label>
+            <input type="text" class="form-control" id="email-l">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Senha:</label>
+            <input type="password" class="form-control" id="senha-l">
+          </div>
+        </form>
+      </div>
+      <div class="alert alert-danger" id="alertar-danger23" role="alert">
+       Ocorreu algum erro
+      </div>
+      <div class="alert alert-success" id="alertar-sucess23" role="alert">
+        Estamos te rediricinando! Aguarde..
+      </div>
+      <div class="modal-body" id="form_verificar2">
+        <form>
+          <div class="form-group">
+            <p>Verifique no seu e-mail</p>
+            <label for="message-text" class="col-form-label">Token:</label>
+            <input type="password" class="form-control" id="token2">
+          </div>
+        </form>
+      <div class="alert alert-danger" id="alertar-danger23" role="alert">
+       Ocorreu algum erro
+      </div>
+      <div class="alert alert-success" id="alertar-sucess23" role="alert">
+        Conta confirmada com sucesso! Estamos te rediricionando!
+      </div>
+      </div>
+      <?php } ?>
+      <?php
+      if(isset($_COOKIE['verificar'])){?>
+      <div class="modal-footer">
+        <a href="/logout"><button type="button" href="/logout" class="btn btn-secondary" data-dismiss="modal">Deslogar</button></a>
+        <button type="button" id="verificar2" class="btn btn-primary">Verificar</button>
+      </div>
+      <?Php } else{ ?>
+      <div class="modal-footer" id="logintt">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" id="logando" class="btn btn-primary">Login</button>
+      </div>
+      <div class="modal-footer" id="verificartt" style="display: none;">
+        <a href="/logout"><button type="button" class="btn btn-secondary" data-dismiss="modal">Deslogar</button></a>
+        <button type="button" id="verificar2" class="btn btn-primary">Verificar</button>
+      </div>
+      <?php } ?>
+    </div>
+  </div>
+</div>
+<!-- End modal login -->
+
+<script type="text/javascript">
+        /// Quando usuário clicar em salvar será feito todos os passo abaixo
+        $('#logando').click(function() {
+ 
+         var emaill = $("#email-l").val();
+         var senhal = $("#senha-l").val();
+
+         $("#logando").html("<div class='loader'></div>");
+
+          $.post("/login", {email: emaill, senha: senhal},
+         function(data){
+            if(data == '01'){
+               setTimeout(  function(){
+               $("#logando").html("Login");
+               $("#alertar-danger23").html("Preencha os campos");
+               $("#alertar-danger23").show();
+               $("#alertar-sucess23").hide();
+               }, 1500);
+            }
+            else if(data == 'verificar'){
+               setTimeout(  function(){
+               $("#alertar-danger23").hide();
+               $("#form_login2").hide();
+               $("#form_verificar2").show();
+               $("#verificartt").show();
+               $("#logintt").hide();
+               }, 1500);
+            }
+            else if(data == 'invalid'){
+               setTimeout(  function(){
+               $("#logando").html("Login");
+               $("#alertar-danger23").html("E-mail ou senha incorretos");
+               $("#alertar-danger23").show();
+               $("#alertar-sucess23").hide();
+               }, 1500);
+            }
+            else if(data == 'sucess'){
+               setTimeout(  function(){
+               $("#logando").html("Login");
+               $("#alertar-danger23").html("Este e-mail já existe");
+               $("#alertar-danger23").hide();
+               $("#alertar-sucess23").show();
+               $("#form_login2").hide();
+               $('#logando').attr('disabled', 'disabled');
+               }, 1500);
+               setTimeout( function(){
+                  location.reload();
+                }, 2000);
+            }
+            else{
+               setTimeout(  function(){
+               $("#logando").html("Login");
+               $("#alertar-danger").html("Ocorreu um erro");
+               $("#alertar-danger").show();
+               $("#alertar-sucess").hide();
+               }, 1500);
+            }
+         }
+          , "html");
+         return false;
+
+     });
+
+
+        /// Quando usuário clicar em salvar será feito todos os passo abaixo
+        $('#verificar2').click(function() {
+ 
+         var tokenD = $("#token2").val();
+
+         $("#verificar2").html("<div class='loader'></div>");
+
+          $.post("/verificandotoken", {token: tokenD},
+         function(dataa){
+            if(dataa == 'sucess'){
+               setTimeout(  function(){
+               $("#verificar2").html("Verificar");
+               $("#alertar-danger21").hide();
+               $("#alertar-sucess21").show();
+               $('#registro').attr('id', 'verificar');
+               }, 1500);
+               setTimeout( function(){
+                  location.reload();
+                }, 2000);
+            }
+            else if(dataa == 'invalid'){
+               setTimeout(  function(){
+               $("#verificar2").html("Verificar");
+               $("#alertar-danger21").show();
+               $("#alertar-danger21").html("Código invalido");
+               $("#alertar-sucess21").hide();
+               }, 1500);
+            }
+            else{
+               setTimeout(  function(){
+               $("#verificar2").html("Verificar");
+               $("#alertar-danger21").html("Ocorreu um erro");
+               $("#alertar-danger21").show();
+               $("#alertar-sucess21").hide();
+               }, 1500);
+            }
+         }
+          , "html");
+         return false;
+
+     });
+ 
+</script>
+
+
+</div>
+<div class="inpiration">
+   <div class="flow">
+      <h1>Encontre sua inspiração.</h1>
+      <h2>Participe da comunidade do NekoApp, onde você encontra varias coisas interessantes!</h2>
+      <?php
+      if(isset($_COOKIE['verificar'])){?>
+      <button data-toggle="modal" id="logase" data-target="#Modallogin">Verificar</button>
+      <?php } else{ ?>
+         <button data-toggle="modal" id="cadastrase" data-target="#Modalregistro">Cadastra-se</button>
+      <?php } ?>
+   </div>
+</div>
+<div class="markup"></div>
+</div>
+</body>
+
+<style type="text/css">
+   .markup{
+      background-image: url("/themes/<?php echo $theme;?>/img/back.gif");
+   }
+</style>
+
+</html>

@@ -1,0 +1,52 @@
+<div class="feed" style="top: 40px; position: relative;">
+<p>Feed de nóticias</p>
+<!-- Carregar feed -->
+<div class="postnews">
+  <div class="title">
+    <div class="title-image">
+      <div class="image"></div>
+    </div>
+    <div class="title-content">
+      <div class="title-content_content">
+        <div class="line-small"></div>
+        <br>
+        <div class="line-medium"></div>
+        <br>
+        <div class="line-large"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_content">
+      <div class="line-large"></div>
+      <br>
+      <div class="line-large"></div>
+      <br>
+      <div class="line-large"></div>
+    </div>
+
+
+  </div>
+</div>
+<!-- End carregar feed -->
+
+
+<div class="aftercool"></div>
+
+<div class="feedapi">
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+//Carregar feed
+$.post( "/api/list_feed", function( data ) {
+	setTimeout( function() {
+  $( ".feedapi" ).html( data );
+  $(".postnews").hide();
+ 	},3000);
+});
+</script>
